@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FITcheKK - Main</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone-container page2-container">
+
+    <!-- =========================
+         PROGRESS
+    ========================== -->
+
+    <section class="progress-section">
+        <img src="Images\progress-tracker-image.jpg" alt="Runner" class="hero-image">
+
+        <div class="progress-information">
+
+            <h2>Progress</h2>
+
+            <p class="average-title">
+                Average hours or<br>minutes of exercise
+            </p>
+
+            <p id="monthlyAverage">
+                Monthly average: 0 min
+            </p>
+
+            <p id="weeklyAverage">
+                Weekly average: 0 min
+            </p>
+
+            <p id="dailyAverage">
+                Daily average: 0 min
+            </p>
+
+        </div>
+
+        <div class="weekly-bars">
+
+            <div class="day-bar">
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-monday"></div>
+                </div>
+                <span>Mon</span>
+            </div>
+
+            <div class="day-bar">
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-tuesday"></div>
+                </div>
+                <span>Tue</span>
+            </div>
+
+            <div class="day-bar">
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-wednesday"></div>
+                </div>
+                <span>Wed</span>
+            </div>
+
+            <div class="day-bar">
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-thursday"></div>
+                </div>
+                <span>Thu</span>
+            </div>
+
+            <div class="day-bar">
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-friday"></div>
+                </div>
+                <span>Fri</span>
+            </div>
+
+            <div class="day-bar">
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-saturday"></div>
+                </div>
+                <span>Sat</span>
+            </div>
+
+            <div class="day-bar">
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-sunday"></div>
+                </div>
+                <span>Sun</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXERCISE TIMER
+    ========================== -->
+
+    <section class="exercise-section">
+
+        <div class="timer-label">
+            <span>Timer</span>
+            <span>mins</span>
+        </div>
+
+        <div class="exercise-display" id="exerciseDisplay">
+            00:00
+        </div>
+
+        <button id="startExercise">
+            START
+        </button>
+
+        <div class="exercise-options">
+
+            <button class="exercise-option" data-minutes="15">15</button>
+
+            <button class="exercise-option" data-minutes="30">30</button>
+
+            <button class="exercise-option" data-minutes="45">45</button>
+
+            <button class="exercise-option" data-minutes="60">60</button>
+
+            <button class="exercise-option" data-minutes="other">other</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BREAK TIMER
+    ========================== -->
+
+    <section class="break-section">
+
+        <div class="timer-label">
+            <span>Break Time</span>
+            <span>mins</span>
+        </div>
+
+        <div class="break-background">
+
+            <button id="stopBreak">
+                STOP
+            </button>
+
+            <button id="resumeBreak">
+                Resume
+            </button>
+
+        </div>
+
+        <div class="break-options">
+
+            <button class="break-option" data-break="5">5</button>
+
+            <button class="break-option" data-break="10">10</button>
+
+            <button class="break-option" data-break="15">15</button>
+
+            <button class="break-option" data-break="20">20</button>
+
+            <button class="break-option" data-break="30">30</button>
+
+        </div>
+
+        <div id="breakDisplay">
+            00:00
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MOTIVATION
+    ========================== -->
+
+    <div class="motivation-message">
+        Do You Think You Made Any Difference?
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="bottom-navigation">
+
+        <a href="index.html" class="nav-button">
+            🏠
+        </a>
+
+        <a href="page3.html" class="nav-button">
+            💡
+        </a>
+
+        <a href="page4.html" class="nav-button">
+            👤
+        </a>
+
+        <a href="page3.html" class="nav-button">
+            »
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
