@@ -195,7 +195,7 @@ font-family: "Joti One", serif;
 .page2-container {
     justify-content: flex-start;
     gap: 0;
-    background: #d7f1ff;
+    background: #ADD8E6;
 }
 
 
@@ -268,7 +268,7 @@ font-family: "Joti One", serif;
     width: 11px;
     height: 100px;
 
-    background: #b9eeb0;
+    background: #73de60;
 
     border-radius: 6px;
 
@@ -282,7 +282,7 @@ font-family: "Joti One", serif;
     width: 100%;
     height: 0%;
 
-    background: #63d84f;
+    background: #368728;
 
     border-radius: 6px;
 
@@ -307,7 +307,7 @@ font-family: "Joti One", serif;
 
     margin-top: 10px;
 
-    background: #9ccde2;
+    background: #ADD8E6;
 
     border: 3px solid #111;
     border-radius: 18px;
