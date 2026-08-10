@@ -610,3 +610,93 @@ font-family: "Joti One", serif;
 .nav-button:hover {
     background: #0c7da7;
 }
+
+/* =========================================
+   WIDGET BACKGROUND IMAGES
+========================================= */
+
+
+/* PROGRESS IMAGE */
+
+.progress-section {
+    position: relative;
+}
+
+.progress-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* Put progress content above image */
+
+.progress-information,
+.progress-section .weekly-bars {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* EXERCISE IMAGE */
+
+.exercise-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* Put exercise controls above image */
+
+.exercise-section .timer-label,
+.exercise-section .exercise-display,
+.exercise-section #startExercise,
+.exercise-section .exercise-options {
+    z-index: 1;
+}
+
+
+/* BREAK IMAGE */
+
+.break-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* Put break controls above image */
+
+.break-section .timer-label,
+.break-section .break-background,
+.break-section .break-options,
+.break-section #breakDisplay {
+    position: relative;
+
+    z-index: 1;
+}
