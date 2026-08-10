@@ -17,36 +17,26 @@
 
 <body>
 
-<div class="phone-container page2-container">
+<!-- =========================
+     PROGRESS WIDGET
+========================== -->
 
-    <!-- =========================
-         PROGRESS
-    ========================== -->
+<section class="widget progress-widget">
 
-    <section class="progress-section">
-        
+    <img src="images/progress.png" alt="Progress background">
 
-        <div class="progress-information">
+    <div class="widget-content">
 
-            <h2>Progress</h2>
-            <img src="Images\progress-tracker-image.jpg" alt="Runner" class="hero-image">
-            <p class="average-title">
-                Average hours or<br>minutes of exercise
-            </p>
+        <h2>Progress</h2>
 
-            <p id="monthlyAverage">
-                Monthly average: 0 min
-            </p>
+        <p class="average-title">
+            Average hours or<br>
+            minutes of exercise
+        </p>
 
-            <p id="weeklyAverage">
-                Weekly average: 0 min
-            </p>
-
-            <p id="dailyAverage">
-                Daily average: 0 min
-            </p>
-
-        </div>
+        <p id="monthlyAverage">Monthly average: 0 min</p>
+        <p id="weeklyAverage">Weekly average: 0 min</p>
+        <p id="dailyAverage">Daily average: 0 min</p>
 
         <div class="weekly-bars">
 
@@ -101,87 +91,91 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         EXERCISE TIMER
-    ========================== -->
+<!-- =========================
+     EXERCISE WIDGET
+========================== -->
 
-    <section class="exercise-section">
+<section class="widget exercise-widget">
+
+    <img src="images/exercise.png" alt="Exercise background">
+
+    <div class="widget-content">
 
         <div class="timer-label">
             <span>Timer</span>
             <span>mins</span>
         </div>
 
-        <div class="exercise-display" id="exerciseDisplay">
+        <!-- Countdown appears ON TOP of image -->
+        <div id="exerciseDisplay" class="timer-display">
             00:00
         </div>
 
-        <button id="startExercise">
+        <button id="startExercise" class="main-timer-button">
             START
         </button>
 
         <div class="exercise-options">
 
             <button class="exercise-option" data-minutes="15">15</button>
-
             <button class="exercise-option" data-minutes="30">30</button>
-
             <button class="exercise-option" data-minutes="45">45</button>
-
             <button class="exercise-option" data-minutes="60">60</button>
-
             <button class="exercise-option" data-minutes="other">other</button>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         BREAK TIMER
-    ========================== -->
+<!-- =========================
+     BREAK WIDGET
+========================== -->
 
-    <section class="break-section">
+<section class="widget break-widget">
+
+    <img src="images/break.png" alt="Break background">
+
+    <div class="widget-content">
 
         <div class="timer-label">
             <span>Break Time</span>
             <span>mins</span>
         </div>
 
-        <div class="break-background">
-
-            <button id="stopBreak">
-                STOP
-            </button>
-
-            <button id="resumeBreak">
-                Resume
-            </button>
-
+        <!-- Break countdown ON TOP of image -->
+        <div id="breakDisplay" class="timer-display">
+            00:00
         </div>
+
+        <button id="stopBreak" class="break-control">
+            STOP
+        </button>
+
+        <button id="resumeBreak" class="break-control">
+            RESUME
+        </button>
 
         <div class="break-options">
 
             <button class="break-option" data-break="5">5</button>
-
             <button class="break-option" data-break="10">10</button>
-
             <button class="break-option" data-break="15">15</button>
-
             <button class="break-option" data-break="20">20</button>
-
             <button class="break-option" data-break="30">30</button>
 
         </div>
 
-        <div id="breakDisplay">
-            00:00
-        </div>
+    </div>
 
-    </section>
+</section>
 
 
     <!-- =========================
