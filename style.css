@@ -439,7 +439,7 @@ font-family: "Joti One", serif;
 
     padding: 7px;
 
-    background: #9ccde2;
+    background:linear-gradient(to right, #95C5D8, #ABC76B);
 
     border-radius: 20px;
 
@@ -592,7 +592,7 @@ font-family: "Joti One", serif;
     align-items: center;
     justify-content: center;
 
-    color: white;
+    color: rgb(30, 25, 25);
 
     font-size: 24px;
     font-weight: bold;
@@ -654,16 +654,13 @@ font-family: "Joti One", serif;
 
 .break-image {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     z-index: 0;
+    opacity: 0.75;
 }
 
 
@@ -673,7 +670,6 @@ font-family: "Joti One", serif;
 
 .break-section .timer-label {
     position: relative;
-
     z-index: 5;
 }
 
@@ -684,13 +680,10 @@ font-family: "Joti One", serif;
 
 .break-background {
     position: absolute;
-
     top: 28px;
     left: 0;
-
     width: 100%;
     height: 45px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -707,7 +700,7 @@ font-family: "Joti One", serif;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    border: 3px solid white;
+    border: 3px solid rgb(2, 2, 2);
 }
 
 #stopBreak {
@@ -737,7 +730,7 @@ font-family: "Joti One", serif;
 
     text-align: center;
 
-    color: white;
+    color: rgb(0, 0, 0);
 
     font-size: 22px;
     font-weight: bold;
@@ -778,9 +771,9 @@ font-family: "Joti One", serif;
     border: none;
     border-radius: 6px;
 
-    background: #fff0a4;
+    background: #f6e52d;
 
-    color: #555;
+    color: #ffffff;
 
     cursor: pointer;
 
