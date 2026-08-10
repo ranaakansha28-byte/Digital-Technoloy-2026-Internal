@@ -330,7 +330,7 @@ font-family: "Joti One", serif;
 .exercise-display {
     position: absolute;
 
-    top: 28px;
+    top: 82px;
     left: 50%;
 
     transform: translateX(-50%);
@@ -699,4 +699,139 @@ font-family: "Joti One", serif;
     position: relative;
 
     z-index: 1;
+}
+/* =========================================
+   FIX TIMER COUNTDOWNS
+========================================= */
+
+
+/* Make sure the background image stays behind everything */
+
+.exercise-image,
+.break-image,
+.progress-image {
+    z-index: 0;
+}
+
+
+/* =========================================
+   EXERCISE TIMER
+========================================= */
+
+.exercise-section .timer-label {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Countdown */
+
+.exercise-display {
+    position: absolute;
+
+    top: 82px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 170px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    font-family: "Inter", sans-serif;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* START / STOP / RESUME button */
+
+#startExercise {
+    position: absolute;
+
+    top: 28px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 175px;
+    height: 45px;
+
+    z-index: 6;
+}
+
+
+/* Exercise choices */
+
+.exercise-options {
+    z-index: 6;
+}
+
+
+/* =========================================
+   BREAK TIMER
+========================================= */
+
+.break-section .timer-label {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Break countdown */
+
+#breakDisplay {
+    position: absolute;
+    top: 82px;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+/* Break STOP / RESUME buttons */
+
+.break-background {
+    position: absolute;
+
+    top: 30px;
+    left: 0;
+
+    width: 100%;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 6;
+}
+
+
+/* Break choices */
+.break-options {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 6;
 }
