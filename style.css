@@ -428,127 +428,6 @@ font-family: "Joti One", serif;
     box-shadow: 0 0 0 3px #d7f1ff;
 }
 
-
-/* =========================================
-   BREAK TIMER
-========================================= */
-
-.break-section {
-    position: relative;
-
-    width: 92%;
-    height: 175px;
-
-    margin-top: 10px;
-
-    background: #f4d276;
-
-    border: 3px solid #111;
-    border-radius: 18px;
-
-    overflow: hidden;
-}
-
-.break-background {
-    height: 110px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-}
-
-.break-background button {
-    width: 105px;
-    height: 42px;
-
-    border-radius: 25px;
-
-    color: white;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    border: 3px solid white;
-}
-
-#stopBreak {
-    background: #e2a72d;
-}
-
-#resumeBreak {
-    background: #79a93e;
-}
-
-#stopBreak:active,
-#resumeBreak:active {
-    transform: scale(0.93);
-}
-
-
-/* Break choices */
-
-.break-options {
-    position: absolute;
-
-    bottom: 8px;
-
-    left: 0;
-
-    width: 100%;
-
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.break-option {
-    width: 38px;
-    height: 26px;
-
-    border: none;
-    border-radius: 6px;
-
-    background: #fff0a4;
-
-    color: #555;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.break-option.selected {
-    transform: scale(1.15);
-
-    background: #e8bb46;
-
-    box-shadow: 0 0 0 2px white;
-}
-
-
-/* Break countdown */
-
-#breakDisplay {
-    position: absolute;
-
-    top: 42px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    color: white;
-
-    font-size: 20px;
-    font-weight: bold;
-
-    pointer-events: none;
-}
-
-
 /* =========================================
    MOTIVATION
 ========================================= */
@@ -672,34 +551,6 @@ font-family: "Joti One", serif;
     z-index: 1;
 }
 
-
-/* BREAK IMAGE */
-
-.break-image {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    z-index: 0;
-}
-
-
-/* Put break controls above image */
-
-.break-section .timer-label,
-.break-section .break-background,
-.break-section .break-options,
-.break-section #breakDisplay {
-    position: relative;
-
-    z-index: 1;
-}
 /* =========================================
    FIX TIMER COUNTDOWNS
 ========================================= */
@@ -776,62 +627,171 @@ font-family: "Joti One", serif;
 .exercise-options {
     z-index: 6;
 }
-
-
 /* =========================================
    BREAK TIMER
 ========================================= */
 
+.break-section {
+    position: relative;
+
+    width: 92%;
+    height: 175px;
+
+    margin-top: 10px;
+
+    background: #f4d276;
+
+    border: 3px solid #111;
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BREAK BACKGROUND IMAGE
+========================================= */
+
+.break-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   BREAK TITLE
+========================================= */
+
 .break-section .timer-label {
     position: relative;
+
     z-index: 5;
 }
 
 
-/* Break countdown */
-
-#breakDisplay {
-    position: absolute;
-    top: 82px;
-    width: 100%;
-    text-align: center;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: "Inter", sans-serif;
-    z-index: 5;
-    pointer-events: none;
-}
-
-
-/* Break STOP / RESUME buttons */
+/* =========================================
+   STOP / RESUME BUTTON
+========================================= */
 
 .break-background {
     position: absolute;
 
-    top: 30px;
+    top: 28px;
     left: 0;
 
     width: 100%;
     height: 45px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
-
+    gap: 12px;
     z-index: 6;
 }
 
 
-/* Break choices */
+.break-background button {
+    width: 105px;
+    height: 42px;
+    border-radius: 25px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid white;
+}
+
+#stopBreak {
+    background: #e2a72d;
+}
+
+#resumeBreak {
+    background: #79a93e;
+}
+
+#stopBreak:active,
+#resumeBreak:active {
+    transform: scale(0.93);
+}
+
+/* =========================================
+   BREAK COUNTDOWN
+========================================= */
+
+#breakDisplay {
+    position: absolute;
+
+    top: 82px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    font-family: "Inter", sans-serif;
+
+    z-index: 7;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BREAK TIME OPTIONS
+========================================= */
+
 .break-options {
     position: absolute;
+
     bottom: 8px;
     left: 0;
+
     width: 100%;
+
     display: flex;
+
     justify-content: space-evenly;
-    z-index: 6;
+    align-items: center;
+
+    z-index: 8;
+}
+
+
+.break-option {
+    width: 38px;
+    height: 26px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #fff0a4;
+
+    color: #555;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.break-option.selected {
+    transform: scale(1.15);
+
+    background: #e8bb46;
+
+    box-shadow: 0 0 0 2px white;
 }
