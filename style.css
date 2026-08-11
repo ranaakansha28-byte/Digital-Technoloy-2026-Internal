@@ -433,25 +433,18 @@ font-family: "Joti One", serif;
 ========================================= */
 
 .motivation-message {
-    width: 82%;
-
+    width: 28%;
+    height: 12%;
     margin-top: 10px;
-
+    margin-right: 240px;
     padding: 7px;
-
     background:linear-gradient(to right, #95C5D8, #ABC76B);
-
-    border-radius: 20px;
-
+    border-radius: 10px;
     text-align: center;
-
     font-family: "Inter", sans-serif;
-
-    font-size: 9px;
+    font-size: 16px;
     font-weight: bold;
 }
-
-
 /* =========================================
    NAVIGATION
 ========================================= */
