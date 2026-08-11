@@ -413,7 +413,26 @@ function updateExerciseAverages(exerciseData) {
             " min";
     }
 }
+   
 
+/* =========================================
+LOAD EXERCISE DATA
+========================================= */
+
+const exerciseData =
+    JSON.parse(localStorage.getItem("exerciseData")) || {
+        monday: 0,
+        tuesday: 0,
+        wednesday: 0,
+        thursday: 0,
+        friday: 0,
+        saturday: 0,
+        sunday: 0
+    };
+
+updateExerciseAverages(exerciseData);
+
+    
 /* =========================================
    UPDATE EXERCISE DISPLAY
 ========================================= */
