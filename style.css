@@ -352,29 +352,21 @@ font-family: "Joti One", serif;
 
 #startExercise {
     position: absolute;
-
     top: 28px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 175px;
     height: 55px;
-
     background: #4f92ad;
-
     border: 4px solid #28647d;
     border-radius: 30px;
-
     color: white;
-
     font-size: 25px;
-    font-weight: bold;
-
+    font-family: "Coiny", system-ui;
+    font-weight: 400;
+    font-style: normal;
     cursor: pointer;
-
     z-index: 2;
-
     transition: 0.2s;
 }
 
@@ -433,17 +425,19 @@ font-family: "Joti One", serif;
 ========================================= */
 
 .motivation-message {
-    width: 28%;
-    height: 12%;
+    width: 35%;
+    height: 12.7%;
     margin-top: 10px;
-    margin-right: 240px;
+    margin-right: 216px;
     padding: 7px;
     background:linear-gradient(to right, #539bb7, #a7d048);
+    border:#6b2d2d solid 3.2px;
     border-radius: 10px;
     text-align: center;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: bold;
+    font-family: "Kavoon", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17.5px;
 }
 
 /* =========================================
@@ -637,17 +631,12 @@ font-family: "Joti One", serif;
 
 .break-section {
     position: relative;
-
     width: 92%;
     height: 175px;
-
     margin-top: 10px;
-
     background: #f4d276;
-
     border: 3px solid #111;
     border-radius: 18px;
-
     overflow: hidden;
 }
 
@@ -700,9 +689,11 @@ font-family: "Joti One", serif;
     width: 105px;
     height: 42px;
     border-radius: 25px;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
+    color: rgb(245, 245, 245);
+    font-family: "Coiny", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
     cursor: pointer;
     border: 3px solid rgb(2, 2, 2);
 }
@@ -729,20 +720,13 @@ font-family: "Joti One", serif;
 
     top: 82px;
     left: 0;
-
     width: 100%;
-
     text-align: center;
-
     color: rgb(0, 0, 0);
-
     font-size: 22px;
     font-weight: bold;
-
     font-family: "Inter", sans-serif;
-
     z-index: 7;
-
     pointer-events: none;
 }
 
@@ -753,17 +737,12 @@ font-family: "Joti One", serif;
 
 .break-options {
     position: absolute;
-
     bottom: 8px;
     left: 0;
-
     width: 100%;
-
     display: flex;
-
     justify-content: space-evenly;
     align-items: center;
-
     z-index: 8;
 }
 
@@ -771,24 +750,17 @@ font-family: "Joti One", serif;
 .break-option {
     width: 38px;
     height: 26px;
-
     border: none;
     border-radius: 6px;
-
     background: #d2753c;
-
     color: #ffffff;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
 
 .break-option.selected {
     transform: scale(1.15);
-
     background: #a12c53;
-
     box-shadow: 0 0 0 2px white;
 }
