@@ -438,13 +438,27 @@ font-family: "Joti One", serif;
     margin-top: 10px;
     margin-right: 240px;
     padding: 7px;
-    background:linear-gradient(to right, #95C5D8, #ABC76B);
+    background:linear-gradient(to right, #539bb7, #a7d048);
     border-radius: 10px;
     text-align: center;
     font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: bold;
 }
+
+/* =========================================
+   MOTIVATION AVOCADO IMAGE
+========================================= */
+
+.motivation-image {
+    position: absolute;
+    left: 32%;
+    top: 63.5%;
+    width: 64%;
+    height: auto;
+    z-index: 3;
+}
+
 /* =========================================
    NAVIGATION
 ========================================= */
