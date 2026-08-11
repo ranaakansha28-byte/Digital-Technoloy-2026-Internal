@@ -237,6 +237,182 @@ function startExerciseTimer() {
 
 }
 
+/* =========================================
+   RECORD COMPLETED WORKOUT
+========================================= */
+
+function recordCompletedWorkout() {
+
+    /* Work out how many minutes were completed */
+    const completedMinutes =
+        Math.floor(exerciseTotalSeconds / 60);
+
+    if (completedMinutes <= 0) {
+        return;
+    }
+
+    /* Find today's day */
+    const today = new Date();
+
+    const days = [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+    ];
+
+    const todayName = days[today.getDay()];
+
+    /* Get saved progress */
+    let exerciseData =
+        JSON.parse(localStorage.getItem("exerciseData")) || {
+            monday: 0,
+            tuesday: 0,
+            wednesday: 0,
+            thursday: 0,
+            friday: 0,
+            saturday: 0,
+            sunday: 0
+        };
+
+    /* Add completed exercise time */
+    exerciseData[todayName] += completedMinutes;
+
+    /* Save the progress */
+    localStorage.setItem(
+        "exerciseData",
+        JSON.stringify(exerciseData)
+    );
+
+    /* Update the progress bars */
+    updateProgressBars(exerciseData);
+}
+
+
+/* =========================================
+   UPDATE PROGRESS BARS
+========================================= */
+
+function updateProgressBars(exerciseData) {
+
+    const dailyGoal = 90;
+
+    const days = [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+    ];
+
+    days.forEach(function (day) {
+
+        const bar =
+            document.getElementById("bar-" + day);
+
+        if (!bar) {
+            return;
+        }
+
+        const percentage =
+            Math.min(
+                (exerciseData[day] / dailyGoal) * 100,
+                100
+            );
+
+        bar.style.height = percentage + "%";
+    });
+}
+
+updateProgressBars(
+    JSON.parse(localStorage.getItem("exerciseData")) || {
+        monday: 0,
+        tuesday: 0,
+        wednesday: 0,
+        thursday: 0,
+        friday: 0,
+        saturday: 0,
+        sunday: 0
+    }
+);
+
+/* =========================================
+   UPDATE EXERCISE AVERAGES
+========================================= */
+
+function updateExerciseAverages(exerciseData) {
+
+    const days = [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+    ];
+
+    /* Find today's day */
+    const today = new Date();
+    const todayName = days[
+        today.getDay() === 0 ? 6 : today.getDay() - 1
+    ];
+
+    /* Exercise completed today */
+    const dailyTotal = exerciseData[todayName];
+
+    /* Calculate total exercise this week */
+    let weeklyTotal = 0;
+
+    days.forEach(function(day) {
+        weeklyTotal += exerciseData[day];
+    });
+
+    /* Weekly average per day */
+    const weeklyAverage =
+        weeklyTotal / 7;
+
+    /* Monthly average per day */
+    const monthlyAverage =
+        (weeklyTotal * 4) / 30;
+
+    /* Find the HTML elements */
+    const dailyElement =
+        document.getElementById("dailyAverage");
+
+    const weeklyElement =
+        document.getElementById("weeklyAverage");
+
+    const monthlyElement =
+        document.getElementById("monthlyAverage");
+
+    /* Update the text */
+    if (dailyElement) {
+        dailyElement.textContent =
+            "Daily average: " +
+            Math.round(dailyTotal) +
+            " min";
+    }
+
+    if (weeklyElement) {
+        weeklyElement.textContent =
+            "Weekly average: " +
+            Math.round(weeklyAverage) +
+            " min";
+    }
+
+    if (monthlyElement) {
+        monthlyElement.textContent =
+            "Monthly average: " +
+            Math.round(monthlyAverage) +
+            " min";
+    }
+}
 
 /* =========================================
    UPDATE EXERCISE DISPLAY
@@ -261,6 +437,7 @@ function updateExerciseDisplay() {
         String(seconds).padStart(2, "0");
 
 }
+
 
 
 /* =========================================
