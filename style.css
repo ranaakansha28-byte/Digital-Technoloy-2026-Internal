@@ -750,3 +750,237 @@ font-style: normal;
     box-shadow: 0 0 0 2px white;
 }
 
+/* =========================================
+   PAGE 3
+========================================= */
+
+.page3 {
+    width: 100%;
+    min-height: 100%;
+    background: #c9efff;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TOP IMAGE
+========================================= */
+
+.page3-hero {
+    width: 100%;
+    height: 187px;
+    overflow: hidden;
+}
+
+.page3-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================================
+   TIPS SECTION
+========================================= */
+
+.tips-section {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.tips-section h2 {
+    display: inline-block;
+    background: #28618a;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 11px 28px;
+    border-radius: 35px;
+    margin: 0 0 20px 0;
+}
+
+
+/* =========================================
+   CAROUSEL
+========================================= */
+
+.tips-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+}
+
+
+/* ARROWS */
+
+.carousel-arrow {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    border: 2px solid #4b8eaf;
+    background: white;
+    color: #23628b;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.carousel-arrow:active {
+    transform: scale(0.9);
+}
+
+
+/* THREE CARDS */
+
+.tip-card-container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+
+/* =========================================
+   FLIP CARDS
+========================================= */
+
+.tip-card {
+    width: 68px;
+    height: 63px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.tip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+
+/* Flip when JavaScript adds .flipped */
+
+.tip-card.flipped .tip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.tip-card-front,
+.tip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+
+/* FRONT */
+
+.tip-card-front {
+    background: white;
+}
+
+.tip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* BACK */
+
+.tip-card-back {
+    background: #28618a;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip-card-back h3 {
+    font-size: 10px;
+    margin: 0 0 3px;
+}
+
+.tip-card-back p {
+    font-size: 7px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   ACTIVITY LOG
+========================================= */
+
+.activity-log-section {
+    margin-top: 20px;
+    padding: 0 23px;
+    text-align: left;
+}
+
+.activity-log-section h2 {
+    display: inline-block;
+    background: #6bb1d4;
+    color: #000;
+    font-size: 25px;
+    padding: 3px 38px;
+    margin: 0 0 9px 0;
+}
+
+
+/* TEXT BOX */
+
+#activityInput {
+    display: block;
+    width: 177px;
+    height: 163px;
+    resize: none;
+    border: none;
+    border-radius: 23px;
+    background: #6bb1d4;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+
+/* SAVE BUTTON */
+
+#saveActivity {
+    display: block;
+    margin: 6px auto 0 auto;
+    width: 76px;
+    height: 23px;
+    border: none;
+    border-radius: 15px;
+    background: #4569b7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#saveActivity:active {
+    transform: scale(0.92);
+}
+
+#saveMessage {
+    text-align: center;
+    font-size: 12px;
+    margin: 4px 0;
+}
