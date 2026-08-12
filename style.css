@@ -751,13 +751,37 @@ font-style: normal;
 }
 
 /* =========================================
-   PAGE 3
+   PAGE 3 PHONE
 ========================================= */
 
-.page3 {
-    width: 100%;
-    min-height: 100%;
+.page3-phone {
+    width: 375px;
+    height: 758px;
+
+    margin: 0 auto;
+
     background: #c9efff;
+
+    border: 7px solid #000;
+
+    border-radius: 58px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* =========================================
+   PAGE 3 CONTENT
+========================================= */
+
+.page3-content {
+    width: 100%;
+    height: calc(100% - 54px);
+
+    background: #c9efff;
+
     overflow: hidden;
 }
 
@@ -766,16 +790,19 @@ font-style: normal;
    TOP IMAGE
 ========================================= */
 
-.page3-hero {
+.page3-top-image {
     width: 100%;
     height: 187px;
+
     overflow: hidden;
 }
 
-.page3-hero img {
+.page3-top-image img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 }
 
@@ -784,21 +811,33 @@ font-style: normal;
    TIPS SECTION
 ========================================= */
 
-.tips-section {
+.page3-tips-section {
     width: 100%;
+
     text-align: center;
+
     padding-top: 10px;
 }
 
-.tips-section h2 {
+
+/* TIPS TITLE */
+
+.page3-tips-title {
     display: inline-block;
-    background: #28618a;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 11px 28px;
-    border-radius: 35px;
+
     margin: 0 0 20px 0;
+
+    padding: 10px 28px;
+
+    background: #28618a;
+
+    color: white;
+
+    border-radius: 30px;
+
+    font-size: 20px;
+
+    font-weight: bold;
 }
 
 
@@ -806,118 +845,176 @@ font-style: normal;
    CAROUSEL
 ========================================= */
 
-.tips-carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
+.page3-carousel {
     width: 100%;
-}
 
-
-/* ARROWS */
-
-.carousel-arrow {
-    width: 29px;
-    height: 29px;
-    border-radius: 50%;
-    border: 2px solid #4b8eaf;
-    background: white;
-    color: #23628b;
-    font-size: 19px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0;
-    flex-shrink: 0;
-}
-
-.carousel-arrow:active {
-    transform: scale(0.9);
-}
-
-
-/* THREE CARDS */
-
-.tip-card-container {
     display: flex;
-    gap: 8px;
+
+    align-items: center;
+
     justify-content: center;
+
+    gap: 8px;
 }
 
 
 /* =========================================
-   FLIP CARDS
+   ARROWS
 ========================================= */
 
-.tip-card {
+.page3-arrow {
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    border: 2px solid #5d94ae;
+
+    background: white;
+
+    color: #28618a;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.page3-arrow:active {
+    transform: scale(0.88);
+}
+
+
+/* =========================================
+   THREE CARDS
+========================================= */
+
+.page3-cards {
+    width: 222px;
+
+    display: flex;
+
+    gap: 9px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   FLIP CARD
+========================================= */
+
+.page3-card {
     width: 68px;
     height: 63px;
+
+    flex-shrink: 0;
+
     perspective: 1000px;
+
     cursor: pointer;
 }
 
-.tip-card-inner {
+
+.page3-card-inner {
     width: 100%;
     height: 100%;
+
     position: relative;
+
     transition: transform 0.6s;
+
     transform-style: preserve-3d;
 }
 
 
-/* Flip when JavaScript adds .flipped */
+/* WHEN FLIPPED */
 
-.tip-card.flipped .tip-card-inner {
+.page3-card.flipped .page3-card-inner {
     transform: rotateY(180deg);
 }
 
 
-.tip-card-front,
-.tip-card-back {
-    position: absolute;
+/* FRONT + BACK */
+
+.page3-card-front,
+.page3-card-back {
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
     border-radius: 2px;
+
     overflow: hidden;
+
+    backface-visibility: hidden;
 }
 
 
 /* FRONT */
 
-.tip-card-front {
+.page3-card-front {
     background: white;
 }
 
-.tip-card-front img {
+.page3-card-front img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
+    display: block;
 }
 
 
 /* BACK */
 
-.tip-card-back {
+.page3-card-back {
     background: #28618a;
+
     color: white;
+
     transform: rotateY(180deg);
+
     padding: 5px;
-    box-sizing: border-box;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
+
+    text-align: center;
 }
 
-.tip-card-back h3 {
-    font-size: 10px;
-    margin: 0 0 3px;
+.page3-card-back h3 {
+    margin: 0 0 3px 0;
+
+    font-size: 9px;
 }
 
-.tip-card-back p {
-    font-size: 7px;
+.page3-card-back p {
     margin: 0;
+
+    font-size: 7px;
+
     line-height: 1.2;
 }
 
@@ -926,61 +1023,179 @@ font-style: normal;
    ACTIVITY LOG
 ========================================= */
 
-.activity-log-section {
-    margin-top: 20px;
-    padding: 0 23px;
-    text-align: left;
+.page3-activity-section {
+    margin-top: 19px;
+
+    padding-left: 22px;
+    padding-right: 22px;
 }
 
-.activity-log-section h2 {
+
+/* ACTIVITY TITLE */
+
+.page3-activity-title {
     display: inline-block;
-    background: #6bb1d4;
-    color: #000;
-    font-size: 25px;
+
+    margin: 0 0 8px 0;
+
     padding: 3px 38px;
-    margin: 0 0 9px 0;
+
+    background: #6bb1d4;
+
+    color: #000;
+
+    font-size: 24px;
+
+    font-family: Impact, "Arial Narrow", sans-serif;
+
+    font-weight: normal;
+}
+
+
+/* =========================================
+   TEXT BOX + RUNNING PERSON
+========================================= */
+
+.page3-activity-area {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
 }
 
 
 /* TEXT BOX */
 
-#activityInput {
-    display: block;
+#page3ActivityInput {
     width: 177px;
     height: 163px;
-    resize: none;
+
     border: none;
+
     border-radius: 23px;
+
     background: #6bb1d4;
-    padding: 20px;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
+
+    padding: 18px;
+
+    resize: none;
+
     outline: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    color: #000;
 }
 
 
-/* SAVE BUTTON */
+/* =========================================
+   RUNNING PERSON
+========================================= */
 
-#saveActivity {
+.page3-running-image {
+    width: 115px;
+    height: 145px;
+
+    object-fit: contain;
+
+    margin-right: 4px;
+}
+
+
+/* =========================================
+   SAVE BUTTON
+========================================= */
+
+#page3SaveButton {
     display: block;
-    margin: 6px auto 0 auto;
+
     width: 76px;
-    height: 23px;
+    height: 24px;
+
+    margin: 6px auto 0 auto;
+
     border: none;
+
     border-radius: 15px;
+
     background: #4569b7;
+
     color: white;
+
+    font-size: 13px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
-#saveActivity:active {
+#page3SaveButton:active {
     transform: scale(0.92);
 }
 
-#saveMessage {
+
+/* SAVE MESSAGE */
+
+#page3SaveMessage {
+    height: 14px;
+
+    margin: 3px 0 0 0;
+
     text-align: center;
-    font-size: 12px;
-    margin: 4px 0;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.page3-navigation {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 54px;
+
+    background: #075a7d;
+
+    display: flex;
+
+    border-top: 2px solid #063d55;
+}
+
+
+.page3-nav-button {
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-right: 1px solid #063d55;
+
+    text-decoration: none;
+}
+
+.page3-nav-button:last-child {
+    border-right: none;
+}
+
+
+.page3-nav-button img {
+    width: 43px;
+    height: 43px;
+
+    object-fit: contain;
 }

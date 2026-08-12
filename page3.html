@@ -5,12 +5,11 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Activity Log</title>
 
-    <!-- Connect CSS -->
+    <!-- YOUR CSS -->
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -19,203 +18,238 @@
 <body>
 
     <!-- =========================================
-         PHONE APP
+         PAGE 3 PHONE CONTAINER
     ========================================= -->
 
-    <div class="phone">
+    <div class="page3-phone">
 
 
-    <!-- =========================================
-    PAGE 3 MAIN CONTENT
-    ========================================= -->
+        <!-- =========================================
+             MAIN PAGE 3 CONTENT
+        ========================================= -->
 
-    <main class="page3">
-
-
-    <!-- =========================================
-    TOP IMAGE
-    ========================================= -->
-
-    <div class="page3-hero">
-
-    <img
-    src="Images/page3-top-image.jpg"
-    alt="Meditation"
-    >
-
-    </div>
+        <main class="page3-content">
 
 
-    <!-- =========================================
-    TIPS SECTION
-    ========================================= -->
+            <!-- =========================================
+                 TOP IMAGE
+            ========================================= -->
 
-    <section class="tips-section">
-    <h2>
-    SOME TIPS FOR MY LOVELIES
-    </h2>
+            <div class="page3-top-image">
 
-    <div class="tips-carousel">
+                <img
+                    src="Images/page3-top-image.jpg"
+                    alt="Meditation"
+                >
 
-     <!-- LEFT ARROW -->
-
-    <button
-    type="button"
-    class="carousel-arrow left-arrow"
-    id="previousTip"
-     aria-label="Previous tips"
-    >
-     &#8592;
-    </button>
+            </div>
 
 
-    <!-- THREE VISIBLE TIP CARDS -->
+            <!-- =========================================
+                 TIPS SECTION
+            ========================================= -->
 
-    <div class="tip-card-container">
-
-
-    <!-- TIP CARD 1 -->
-
-    <div class="tip-card">
-
-     <div class="tip-card-inner">
-
-     <!-- FRONT -->
-
-    <div class="tip-card-front">
-
-    <img
-    src="Images/tip1.jpg"
-    alt="Exercise tip 1"
-    >
-     </div>
-
-    <!-- BACK -->
-
-    <div class="tip-card-back">
-
-    <h3>
-    Stay Active
-    </h3>
-
-    <p>
-    Keep your body moving
-    throughout the day.
-    </p>
-
-    </div>
+            <section class="page3-tips-section">
 
 
-</div>
-
-</div>
-
-
-<!-- TIP CARD 2 -->
-<div class="tip-card">
-
-   <div class="tip-card-inner">
-
- <!-- FRONT -->
-
-   <div class="tip-card-front">
-<img
- src="Images/tip2.jpg"
- alt="Exercise tip 2"
->
-</div>
-<!-- BACK -->
-
- <div class="tip-card-back">
-<h3>
-Take Breaks
-  </h3>
-<p>
-   Give your body and mind
-time to recharge.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- TIP CARD 3 -->
-<div class="tip-card">
-
-<div class="tip-card-inner">
-<!-- FRONT -->
-<div class="tip-card-front">
-<img
-src="Images/tip3.jpg"
-alt="Exercise tip 3"
->
-</div>
-<!-- BACK -->
-
-<div class="tip-card-back">
-
-<h3>
- Stay Consistent
-</h3>
-
-<p>
-Small amounts of exercise
-can build healthy habits.
-</p>
-</div>
-</div>
-</div>
-</div>
+                <h2 class="page3-tips-title">
+                    SOME TIPS FOR MY LOVELIES
+                </h2>
 
 
-<!-- RIGHT ARROW -->
-
-<button
- type="button"
-class="carousel-arrow right-arrow"
- id="nextTip"
-aria-label="Next tips"
->
-     &#8594;
-    </button>
-
-</div>
-
-</section>
-
-<!-- =========================================
- ACTIVITY LOG
-========================================= -->
-
-<section class="activity-log-section">
+                <div class="page3-carousel">
 
 
-<h2>
- Activity LOG
- </h2>
-<!-- USER WRITES ACTIVITY HERE -->
-<textarea
-id="activityInput"
-   placeholder=""
- aria-label="Activity log">
-</textarea>
+                    <!-- LEFT ARROW -->
+
+                    <button
+                        type="button"
+                        class="page3-arrow"
+                        id="page3Previous"
+                        aria-label="Previous tips"
+                    >
+                        &#8592;
+                    </button>
 
 
-<!-- SAVE BUTTON -->
+                    <!-- THREE VISIBLE CARDS -->
 
-<button
- type="button"
- id="saveActivity"
->
-SAVE
-</button>
+                    <div class="page3-cards">
 
-<!-- SAVE MESSAGE -->
- <p id="saveMessage"></p>
 
-</section>
+                        <!-- CARD 1 -->
+
+                        <div class="page3-card">
+
+                            <div class="page3-card-inner">
+
+
+                                <div class="page3-card-front">
+
+                                    <img
+                                        src="Images/tip1.jpg"
+                                        alt="Tip 1"
+                                    >
+
+                                </div>
+
+
+                                <div class="page3-card-back">
+
+                                    <h3>Stay Active</h3>
+
+                                    <p>
+                                        Keep your body moving
+                                        throughout the day.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CARD 2 -->
+
+                        <div class="page3-card">
+
+                            <div class="page3-card-inner">
+
+
+                                <div class="page3-card-front">
+
+                                    <img
+                                        src="Images/tip2.jpg"
+                                        alt="Tip 2"
+                                    >
+
+                                </div>
+
+
+                                <div class="page3-card-back">
+
+                                    <h3>Take Breaks</h3>
+
+                                    <p>
+                                        Give your body and mind
+                                        time to recharge.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CARD 3 -->
+
+                        <div class="page3-card">
+
+                            <div class="page3-card-inner">
+
+
+                                <div class="page3-card-front">
+
+                                    <img
+                                        src="Images/tip3.jpg"
+                                        alt="Tip 3"
+                                    >
+
+                                </div>
+
+
+                                <div class="page3-card-back">
+
+                                    <h3>Stay Consistent</h3>
+
+                                    <p>
+                                        Small amounts of exercise
+                                        build healthy habits.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- RIGHT ARROW -->
+
+                    <button
+                        type="button"
+                        class="page3-arrow"
+                        id="page3Next"
+                        aria-label="Next tips"
+                    >
+                        &#8594;
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 ACTIVITY LOG
+            ========================================= -->
+
+            <section class="page3-activity-section">
+
+
+                <h2 class="page3-activity-title">
+                    Activity LOG
+                </h2>
+
+
+                <div class="page3-activity-area">
+
+
+                    <!-- TEXT BOX -->
+
+                    <textarea
+                        id="page3ActivityInput"
+                        aria-label="Activity log"
+                    ></textarea>
+
+
+                    <!-- RUNNING PERSON -->
+
+                    <img
+                        src="Images/running-person.png"
+                        alt="Running person"
+                        class="page3-running-image"
+                    >
+
+
+                </div>
+
+
+                <!-- SAVE BUTTON -->
+
+                <button
+                    type="button"
+                    id="page3SaveButton"
+                >
+                    SAVE
+                </button>
+
+
+                <!-- SAVE MESSAGE -->
+
+                <p id="page3SaveMessage"></p>
+
+
+            </section>
 
 
         </main>
@@ -225,75 +259,29 @@ SAVE
              BOTTOM NAVIGATION
         ========================================= -->
 
-        <nav class="bottom-navigation">
+       <nav class="bottom-navigation">
 
+        <a href="index.html" class="nav-button">
+           <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"/></svg>
+        </a>
 
-            <!-- HOME -->
+        <a href="page3.html" class="nav-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M480-80q-27 0-47.5-13T406-129h-14q-24 0-42-18t-18-42v-143q-66-43-104-110t-38-148q0-121 84.5-205.5T480-880q121 0 205.5 84.5T770-590q0 81-38 148T628-332v143q0 24-18 42t-42 18h-14q-6 23-26.5 36T480-80Zm-88-109h176v-44H392v44Zm0-84h176v-40H392v40Zm-9-100h74v-137l-92-92 31-31 84 84 84-84 31 31-92 92v137h74q60-28 96.5-87T710-590q0-97-66.5-163.5T480-820q-97 0-163.5 66.5T250-590q0 71 36.5 130t96.5 87Zm97-176Zm0-48Z"/></svg>
+        </a>
 
-            <a
-                href="index.html"
-                class="nav-button"
-                aria-label="Home"
-            >
-                <img
-                    src="Images/home-icon.png"
-                    alt="Home"
-                >
-            </a>
+        <a href="page4.html" class="nav-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M372-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5T731-360q31 14 50 41t19 65v94H160Zm60-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm324.5-346.5Q570-592 570-631t-25.5-64.5Q519-721 480-721t-64.5 25.5Q390-670 390-631t25.5 64.5Q441-541 480-541t64.5-25.5ZM480-631Zm0 411Z"/></svg>
+        </a>
 
+        <a href="page5.html" class="nav-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M237-277h487L577-472 447-302l-93-126-117 151Zm-57 157q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h213v60H180v600h600v-272l60 60v212q0 24-18 42t-42 18H180Zm300-360Zm395 38L742-575q-21 14-41.5 20.5T652-548q-70 0-118-48t-48-118q0-70 48-118t118-48q70 0 118 48t48 118q0 28-8 53t-22 46l130 130-43 43ZM652-608q46 0 76-30t30-76q0-46-30-76t-76-30q-46 0-76 30t-30 76q0 46 30 76t76 30Z"/></svg>
+        </a>
 
-            <!-- ACTIVITY / PAGE 3 -->
-
-            <a
-                href="page3.html"
-                class="nav-button active"
-                aria-label="Activity"
-            >
-                <img
-                    src="Images/activity-icon.png"
-                    alt="Activity"
-                >
-            </a>
-
-
-            <!-- PROFILE -->
-
-            <a
-                href="#"
-                class="nav-button"
-                aria-label="Profile"
-            >
-                <img
-                    src="Images/profile-icon.png"
-                    alt="Profile"
-                >
-            </a>
-
-
-            <!-- PAGE 4 -->
-
-            <a
-                href="page4.html"
-                class="nav-button"
-                aria-label="Saved activities"
-            >
-                <img
-                    src="Images/gallery-icon.png"
-                    alt="Saved activities"
-                >
-            </a>
-
-
-        </nav>
+    </nav>
 
 
     </div>
-
-
-    <!-- =========================================
-         CONNECT JAVASCRIPT
-    ========================================= -->
-
+    <!-- YOUR JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>

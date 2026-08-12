@@ -674,3 +674,305 @@ function updateBreakButtons() {
     }
 
 }
+
+
+
+
+
+
+
+/* =========================================
+   PAGE 3
+   TIPS + ACTIVITY LOG
+========================================= */
+
+(function () {
+
+    /* =========================================
+       7 TIPS
+    ========================================= */
+
+    const tips = [
+
+        {
+            image: "Images/tip1.jpg",
+            title: "Stay Active",
+            text: "Keep your body moving throughout the day."
+        },
+
+        {
+            image: "Images/tip2.jpg",
+            title: "Take Breaks",
+            text: "Give your body and mind time to recharge."
+        },
+
+        {
+            image: "Images/tip3.jpg",
+            title: "Stay Consistent",
+            text: "Small amounts of exercise build healthy habits."
+        },
+
+        {
+            image: "Images/tip4.jpg",
+            title: "Drink Water",
+            text: "Remember to drink enough water during the day."
+        },
+
+        {
+            image: "Images/tip5.jpg",
+            title: "Sleep Well",
+            text: "Good sleep helps your body recover and recharge."
+        },
+
+        {
+            image: "Images/tip6.jpg",
+            title: "Stretch",
+            text: "Stretching can help your body prepare for movement."
+        },
+
+        {
+            image: "Images/tip7.jpg",
+            title: "Have Fun",
+            text: "Choose activities that you actually enjoy."
+        }
+
+    ];
+
+
+    let currentTip = 0;
+
+
+    /* =========================================
+       FIND PAGE 3 ELEMENTS
+    ========================================= */
+
+    const cards =
+        document.querySelectorAll(".page3-card");
+
+    const previousButton =
+        document.getElementById("page3Previous");
+
+    const nextButton =
+        document.getElementById("page3Next");
+
+    const activityInput =
+        document.getElementById("page3ActivityInput");
+
+    const saveButton =
+        document.getElementById("page3SaveButton");
+
+    const saveMessage =
+        document.getElementById("page3SaveMessage");
+
+
+    /* =========================================
+       STOP IF PAGE 3 IS NOT OPEN
+    ========================================= */
+
+    if (!cards.length) {
+        return;
+    }
+
+
+    /* =========================================
+       DISPLAY THREE TIPS
+    ========================================= */
+
+    function displayTips() {
+
+        for (let i = 0; i < 3; i++) {
+
+            const tipIndex =
+                (currentTip + i) % tips.length;
+
+            const card = cards[i];
+
+
+            /* Reset flip */
+
+            card.classList.remove("flipped");
+
+
+            /* Change image */
+
+            card.querySelector(
+                ".page3-card-front img"
+            ).src = tips[tipIndex].image;
+
+
+            /* Change title */
+
+            card.querySelector(
+                ".page3-card-back h3"
+            ).textContent = tips[tipIndex].title;
+
+
+            /* Change information */
+
+            card.querySelector(
+                ".page3-card-back p"
+            ).textContent = tips[tipIndex].text;
+
+        }
+
+    }
+
+
+    /* =========================================
+       RIGHT ARROW
+    ========================================= */
+
+    if (nextButton) {
+
+        nextButton.addEventListener(
+            "click",
+            function () {
+
+                currentTip =
+                    (currentTip + 1) % tips.length;
+
+                displayTips();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       LEFT ARROW
+    ========================================= */
+
+    if (previousButton) {
+
+        previousButton.addEventListener(
+            "click",
+            function () {
+
+                currentTip =
+                    (currentTip - 1 + tips.length)
+                    % tips.length;
+
+                displayTips();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       FLIP CARDS
+    ========================================= */
+
+    cards.forEach(function (card) {
+
+        card.addEventListener(
+            "click",
+            function () {
+
+                card.classList.toggle("flipped");
+
+            }
+        );
+
+    });
+
+
+    /* =========================================
+       SHOW FIRST THREE
+    ========================================= */
+
+    displayTips();
+
+
+    /* =========================================
+       SAVE ACTIVITY
+    ========================================= */
+
+    if (saveButton) {
+
+        saveButton.addEventListener(
+            "click",
+            function () {
+
+                const activity =
+                    activityInput.value.trim();
+
+
+                /* Don't save empty activity */
+
+                if (activity === "") {
+
+                    saveMessage.textContent =
+                        "Please write something first.";
+
+                    return;
+                }
+
+
+                /* Get existing activities */
+
+                let savedActivities =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "activityLog"
+                        )
+                    ) || [];
+
+
+                /* Add new activity */
+
+                savedActivities.push({
+
+                    text: activity,
+
+                    date:
+                        new Date()
+                        .toLocaleDateString(),
+
+                    time:
+                        new Date()
+                        .toLocaleTimeString()
+
+                });
+
+
+                /* Save activities */
+
+                localStorage.setItem(
+                    "activityLog",
+                    JSON.stringify(
+                        savedActivities
+                    )
+                );
+
+
+                /* Clear text box */
+
+                activityInput.value = "";
+
+
+                /* Show confirmation */
+
+                saveMessage.textContent =
+                    "Saved!";
+
+
+                /* Remove message */
+
+                setTimeout(
+                    function () {
+
+                        saveMessage.textContent = "";
+
+                    },
+                    2000
+                );
+
+            }
+        );
+
+    }
+
+})();
