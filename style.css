@@ -837,7 +837,8 @@ font-style: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 21px;
+    gap: 12px;
+    position: relative;
 }
 
 .page3-arrow {
@@ -851,10 +852,16 @@ font-style: normal;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+
+    pointer-events: auto;
 }
 
 .page3-arrow:active {
@@ -866,17 +873,16 @@ font-style: normal;
     display: flex;
     gap: 9px;
     overflow: hidden;
+    flex-shrink: 0;
 }
-
 
 .page3-card {
     width: 68px;
     height: 68px;
-    flex-shrink: 0;
+    flex: 0 0 68px;
     perspective: 1000px;
     cursor: pointer;
 }
-
 
 .page3-card-inner {
     width: 100%;
@@ -886,11 +892,9 @@ font-style: normal;
     transform-style: preserve-3d;
 }
 
-
 .page3-card.flipped .page3-card-inner {
     transform: rotateY(180deg);
 }
-
 
 .page3-card-front,
 .page3-card-back {
@@ -903,7 +907,6 @@ font-style: normal;
     overflow: hidden;
     backface-visibility: hidden;
 }
-
 
 .page3-card-front {
     background: white;
@@ -939,7 +942,6 @@ font-style: normal;
     line-height: 1.2;
 }
 
-
 /* =========================================
    ACTIVITY LOG
 ========================================= */
@@ -949,7 +951,6 @@ font-style: normal;
     padding-left: 22px;
     padding-right: 22px;
 }
-
 
 .page3-activity-title {
     display: inline-block;
@@ -962,19 +963,30 @@ font-style: normal;
     font-weight: normal;
 }
 
- Running person 
+
+/* =========================================
+   ACTIVITY AREA
+========================================= */
+
 .page3-activity-area {
     width: 100%;
+    height: 190px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 
+/* =========================================
+   ACTIVITY TEXT BOX
+========================================= */
+
 #page3ActivityInput {
-    width: 177px;
+    width: 187px;
     height: 163px;
-    border: none;
+    box-sizing: border-box;
+    border: double;
     border-radius: 23px;
     background: #6bb1d4;
     padding: 18px;
@@ -983,17 +995,22 @@ font-style: normal;
     font-family: Arial, sans-serif;
     font-size: 15px;
     color: #000;
+    flex-shrink: 0;
 }
 
+
+/* =========================================
    RUNNING PERSON
+========================================= */
 
-.page3-running-image {
-    width: 115px;
-    height: 145px;
+.running-image {
+    width: 203px;
+    height: 204px;
     object-fit: contain;
-    margin-right: 4px;
+    display: block;
+    margin: -30px;
+    flex-shrink: 0;
 }
-
 
 /* =========================================
    SAVE BUTTON
@@ -1044,7 +1061,7 @@ font-style: normal;
    BOTTOM NAVIGATION
 ========================================= */
 
-.page3-navigation {
+.bottom-navigation {
     position: absolute;
 
     left: 0;
