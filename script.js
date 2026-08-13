@@ -687,203 +687,95 @@ function updateBreakButtons() {
 ========================================= */
 
 (function () {
+/* =========================================
+   7 CARD CAROUSEL
+========================================= */
 
-    /* =========================================
-       7 TIPS
-    ========================================= */
+const cardsTrack =
+    document.getElementById("page3CardsTrack");
 
-    const tips = [
+const previousButton =
+    document.getElementById("page3Previous");
 
-        {
-            image: "Images/tip1.jpg",
-            title: "Stay Active",
-            text: "Keep your body moving throughout the day."
-        },
+const nextButton =
+    document.getElementById("page3Next");
 
-        {
-            image: "Images/tip2.jpg",
-            title: "Take Breaks",
-            text: "Give your body and mind time to recharge."
-        },
-
-        {
-            image: "Images/tip3.jpg",
-            title: "Stay Consistent",
-            text: "Small amounts of exercise build healthy habits."
-        },
-
-        {
-            image: "Images/tip4.jpg",
-            title: "Drink Water",
-            text: "Remember to drink enough water during the day."
-        },
-
-        {
-            image: "Images/tip5.jpg",
-            title: "Sleep Well",
-            text: "Good sleep helps your body recover and recharge."
-        },
-
-        {
-            image: "Images/tip6.jpg",
-            title: "Stretch",
-            text: "Stretching can help your body prepare for movement."
-        },
-
-        {
-            image: "Images/tip7.jpg",
-            title: "Have Fun",
-            text: "Choose activities that you actually enjoy."
-        }
-
-    ];
+const cards =
+    document.querySelectorAll(".page3-card");
 
 
-    let currentTip = 0;
+let currentPosition = 0;
+
+const totalCards = cards.length;
+
+const visibleCards = 3;
+
+const cardWidth = 68;
+
+const cardGap = 9;
+
+const moveAmount = cardWidth + cardGap;
 
 
-    /* =========================================
-       FIND PAGE 3 ELEMENTS
-    ========================================= */
+/* =========================================
+   MOVE CARDS
+========================================= */
 
-    const cards =
-        document.querySelectorAll(".page3-card");
+function moveCards() {
 
-    const previousButton =
-        document.getElementById("page3Previous");
+    cardsTrack.style.transform =
+        `translateX(-${currentPosition * moveAmount}px)`;
 
-    const nextButton =
-        document.getElementById("page3Next");
-
-    const activityInput =
-        document.getElementById("page3ActivityInput");
-
-    const saveButton =
-        document.getElementById("page3SaveButton");
-
-    const saveMessage =
-        document.getElementById("page3SaveMessage");
+}
 
 
-    /* =========================================
-       STOP IF PAGE 3 IS NOT OPEN
-    ========================================= */
+/* =========================================
+   RIGHT ARROW
+========================================= */
 
-    if (!cards.length) {
-        return;
-    }
+nextButton.addEventListener("click", function () {
 
+    if (currentPosition < totalCards - visibleCards) {
 
-    /* =========================================
-       DISPLAY THREE TIPS
-    ========================================= */
+        currentPosition++;
 
-    function displayTips() {
-
-        for (let i = 0; i < 3; i++) {
-
-            const tipIndex =
-                (currentTip + i) % tips.length;
-
-            const card = cards[i];
-
-
-            /* Reset flip */
-
-            card.classList.remove("flipped");
-
-
-            /* Change image */
-
-            card.querySelector(
-                ".page3-card-front img"
-            ).src = tips[tipIndex].image;
-
-
-            /* Change title */
-
-            card.querySelector(
-                ".page3-card-back h3"
-            ).textContent = tips[tipIndex].title;
-
-
-            /* Change information */
-
-            card.querySelector(
-                ".page3-card-back p"
-            ).textContent = tips[tipIndex].text;
-
-        }
+        moveCards();
 
     }
 
+});
 
-    /* =========================================
-       RIGHT ARROW
-    ========================================= */
 
-    if (nextButton) {
+/* =========================================
+   LEFT ARROW
+========================================= */
 
-        nextButton.addEventListener(
-            "click",
-            function () {
+previousButton.addEventListener("click", function () {
 
-                currentTip =
-                    (currentTip + 1) % tips.length;
+    if (currentPosition > 0) {
 
-                displayTips();
+        currentPosition--;
 
-            }
-        );
+        moveCards();
 
     }
 
-
-    /* =========================================
-       LEFT ARROW
-    ========================================= */
-
-    if (previousButton) {
-
-        previousButton.addEventListener(
-            "click",
-            function () {
-
-                currentTip =
-                    (currentTip - 1 + tips.length)
-                    % tips.length;
-
-                displayTips();
-
-            }
-        );
-
-    }
+});
 
 
-    /* =========================================
-       FLIP CARDS
-    ========================================= */
+/* =========================================
+   FLIP CARDS
+========================================= */
 
-    cards.forEach(function (card) {
+cards.forEach(function (card) {
 
-        card.addEventListener(
-            "click",
-            function () {
+    card.addEventListener("click", function () {
 
-                card.classList.toggle("flipped");
-
-            }
-        );
+        card.classList.toggle("flipped");
 
     });
 
-
-    /* =========================================
-       SHOW FIRST THREE
-    ========================================= */
-
-    displayTips();
+});
 
 
     /* =========================================
