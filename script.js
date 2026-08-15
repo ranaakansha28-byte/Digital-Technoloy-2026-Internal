@@ -778,10 +778,7 @@ cards.forEach(function (card) {
 });
 
 
-    /* =========================================
-       SAVE ACTIVITY
-    ========================================= */
-
+  
     if (saveButton) {
 
         saveButton.addEventListener(

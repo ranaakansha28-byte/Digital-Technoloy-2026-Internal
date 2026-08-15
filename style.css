@@ -968,11 +968,6 @@ font-style: normal;
     backface-visibility: hidden;
 }
 
-
-/* =========================================
-   CARD IMAGE
-========================================= */
-
 .page3-card-front {
     background: rgb(255, 255, 255);
 }
@@ -1029,11 +1024,6 @@ font-style: normal;
     font-weight: normal;
 }
 
-
-/* =========================================
-   ACTIVITY AREA
-========================================= */
-
 .page3-activity-area {
     width: 100%;
     height: 190px;
@@ -1043,10 +1033,6 @@ font-style: normal;
     position: relative;
 }
 
-
-/* =========================================
-   ACTIVITY TEXT BOX
-========================================= */
 
 #page3ActivityInput {
     width: 187px;
@@ -1065,10 +1051,6 @@ font-style: normal;
 }
 
 
-/* =========================================
-   RUNNING PERSON
-========================================= */
-
 .running-image {
     width: 203px;
     height: 204px;
@@ -1078,9 +1060,6 @@ font-style: normal;
     flex-shrink: 0;
 }
 
-/* =========================================
-   SAVE BUTTON
-========================================= */
 
 #page3SaveButton {
     display: block;
