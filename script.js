@@ -865,3 +865,151 @@ cards.forEach(function (card) {
     }
 
 })();
+
+
+
+
+
+
+
+const activityList =
+    document.getElementById("page4ActivityList");
+
+const emptyMessage =
+    document.getElementById("page4EmptyMessage");
+
+
+
+function loadActivities() {
+
+    let savedActivities =
+        JSON.parse(
+            localStorage.getItem("activityLog")
+        ) || [];
+
+
+    activityList.innerHTML = "";
+
+
+    if (savedActivities.length === 0) {
+
+        emptyMessage.style.display = "block";
+
+        return;
+
+    }
+
+
+    emptyMessage.style.display = "none";
+
+
+    savedActivities.forEach(
+        function (activity, index) {
+
+
+            const activityItem =
+                document.createElement("div");
+
+            activityItem.className =
+                "page4-activity-item";
+
+
+
+            const date =
+                document.createElement("div");
+
+            date.className =
+                "page4-activity-date";
+
+            date.textContent =
+                activity.date;
+
+
+            const activityText =
+                document.createElement("div");
+
+            activityText.className =
+                "page4-activity-text";
+
+            activityText.textContent =
+                activity.text;
+
+
+            const deleteButton =
+                document.createElement("button");
+
+            deleteButton.type = "button";
+
+            deleteButton.className =
+                "page4-delete-button";
+
+            deleteButton.setAttribute(
+                "aria-label",
+                "Delete activity"
+            );
+
+
+            deleteButton.innerHTML = `
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12ZM8 9h8v10H8V9Zm7.5-5-1-1h-5l-1 1H5v2h14V4h-3.5Z"
+                    />
+
+                </svg>
+
+            `;
+
+
+            deleteButton.addEventListener(
+                "click",
+                function () {
+
+                    deleteActivity(index);
+
+                }
+            );
+
+
+            activityItem.appendChild(date);
+
+            activityItem.appendChild(activityText);
+
+            activityItem.appendChild(deleteButton);
+
+            activityList.appendChild(activityItem);
+
+        }
+    );
+
+}
+
+
+function deleteActivity(index) {
+
+    let savedActivities =
+        JSON.parse(
+            localStorage.getItem("activityLog")
+        ) || [];
+
+
+    savedActivities.splice(index, 1);
+
+
+    localStorage.setItem(
+        "activityLog",
+        JSON.stringify(savedActivities)
+    );
+
+
+    loadActivities();
+
+}
+
+
+loadActivities();
