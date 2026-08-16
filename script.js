@@ -681,115 +681,127 @@ function updateBreakButtons() {
 
 
 
-/* =========================================
-   PAGE 3
-   TIPS + ACTIVITY LOG
-========================================= */
+   
 
+page 3 
 (function () {
-/* =========================================
-   7 CARD CAROUSEL
-========================================= */
 
-const cardsTrack =
-    document.getElementById("page3CardsTrack");
+    const cardsTrack =
+        document.getElementById("page3CardsTrack");
 
-const previousButton =
-    document.getElementById("page3Previous");
+    const previousButton =
+        document.getElementById("page3Previous");
 
-const nextButton =
-    document.getElementById("page3Next");
+    const nextButton =
+        document.getElementById("page3Next");
 
-const cards =
-    document.querySelectorAll(".page3-card");
+    const cards =
+        document.querySelectorAll(".page3-card");
 
 
-let currentPosition = 0;
+    const activityInput =
+        document.getElementById("page3ActivityInput");
 
-const totalCards = cards.length;
+    const saveButton =
+        document.getElementById("page3SaveButton");
 
-const visibleCards = 3;
-
-const cardWidth = 68;
-
-const cardGap = 9;
-
-const moveAmount = cardWidth + cardGap;
+    const saveMessage =
+        document.getElementById("page3SaveMessage");
 
 
-/* =========================================
-   MOVE CARDS
-========================================= */
+    let currentPosition = 0;
 
-function moveCards() {
+    const totalCards = cards.length;
 
-    cardsTrack.style.transform =
-        `translateX(-${currentPosition * moveAmount}px)`;
+    const visibleCards = 3;
 
-}
+    const cardWidth = 68;
+
+    const cardGap = 9;
+
+    const moveAmount =
+        cardWidth + cardGap;
 
 
-/* =========================================
-   RIGHT ARROW
-========================================= */
+    function moveCards() {
 
-nextButton.addEventListener("click", function () {
-
-    if (currentPosition < totalCards - visibleCards) {
-
-        currentPosition++;
-
-        moveCards();
+        cardsTrack.style.transform =
+            `translateX(-${currentPosition * moveAmount}px)`;
 
     }
 
-});
 
+    if (nextButton) {
 
-/* =========================================
-   LEFT ARROW
-========================================= */
+        nextButton.addEventListener(
+            "click",
+            function () {
 
-previousButton.addEventListener("click", function () {
+                if (
+                    currentPosition <
+                    totalCards - visibleCards
+                ) {
 
-    if (currentPosition > 0) {
+                    currentPosition++;
 
-        currentPosition--;
+                    moveCards();
 
-        moveCards();
+                }
+
+            }
+        );
 
     }
 
-});
+
+    if (previousButton) {
+
+        previousButton.addEventListener(
+            "click",
+            function () {
+
+                if (currentPosition > 0) {
+
+                    currentPosition--;
+
+                    moveCards();
+
+                }
+
+            }
+        );
+
+    }
 
 
-/* =========================================
-   FLIP CARDS
-========================================= */
+    cards.forEach(function (card) {
 
-cards.forEach(function (card) {
+        card.addEventListener(
+            "click",
+            function () {
 
-    card.addEventListener("click", function () {
+                card.classList.toggle("flipped");
 
-        card.classList.toggle("flipped");
+            }
+        );
 
     });
 
-});
 
 
-  
     if (saveButton) {
 
         saveButton.addEventListener(
             "click",
             function () {
 
+
+                /* Get activity */
+
                 const activity =
                     activityInput.value.trim();
 
 
-                /* Don't save empty activity */
 
                 if (activity === "") {
 
@@ -797,10 +809,10 @@ cards.forEach(function (card) {
                         "Please write something first.";
 
                     return;
+
                 }
 
 
-                /* Get existing activities */
 
                 let savedActivities =
                     JSON.parse(
@@ -809,8 +821,6 @@ cards.forEach(function (card) {
                         )
                     ) || [];
 
-
-                /* Add new activity */
 
                 savedActivities.push({
 
@@ -827,7 +837,6 @@ cards.forEach(function (card) {
                 });
 
 
-                /* Save activities */
 
                 localStorage.setItem(
                     "activityLog",
@@ -837,23 +846,19 @@ cards.forEach(function (card) {
                 );
 
 
-                /* Clear text box */
-
                 activityInput.value = "";
 
 
-                /* Show confirmation */
 
                 saveMessage.textContent =
                     "Saved!";
 
 
-                /* Remove message */
-
                 setTimeout(
                     function () {
 
-                        saveMessage.textContent = "";
+                        saveMessage.textContent =
+                            "";
 
                     },
                     2000
@@ -863,6 +868,7 @@ cards.forEach(function (card) {
         );
 
     }
+
 
 })();
 
