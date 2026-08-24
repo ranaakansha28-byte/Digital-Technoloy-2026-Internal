@@ -13,31 +13,23 @@ body{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Phone */
 
 .phone-container{
-
     width:390px;
     height:844px;
-
     background:#ADD8E6;
-
     border:8px solid #111;
     border-radius:40px;
-
     overflow:hidden;
-
     position:relative;
-
     display:flex;
     flex-direction:column;
     align-items:center;
-
     box-shadow:0 15px 40px rgba(0,0,0,.3);
 
 }
 
-/* Hero Image */
+
 
 .hero-image{
 
@@ -47,7 +39,7 @@ body{
 
 }
 
-/* Title */
+
 
 h1{
 margin-top:20px;
@@ -59,7 +51,7 @@ font-weight: 400;
 font-style: normal;
 }
 
-/* Welcome Box */
+
 
 .welcome-text{
     width:85%;
@@ -71,7 +63,7 @@ font-style: normal;
 
 color:#000000;
 font-size:22px;
-margin-bottom:12px;
+margin-bottom:4px;
 font-family: "Carter One", system-ui;
 font-weight: 400;
 font-style: normal;
@@ -79,7 +71,7 @@ font-style: normal;
 
 .welcome-text p{
 
-    font-size:17px;
+    font-size:15px;
     line-height:1;
     color:#000000;
     font-family: "Inter", sans-serif;
@@ -90,29 +82,26 @@ font-style: normal;
     text-align: center;
 }
 
-/* =========================================
-   AVOCADOS
-========================================= */
+
 
 .avocado-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 10px;
+    padding: 0px;
     box-sizing: border-box;
-    margin-top: 5px;
+    margin-top: -0.10px;
 }
 
 .avocado-container img {
-    width: 145px;
-    height: 135px;
+    width: 165px;
+    height: 155px;
     object-fit: contain;
 
 
 }
 
-/* Button */
 
 #startButton{
 
@@ -128,10 +117,9 @@ font-style: normal;
     font-weight:bold;
     cursor:pointer;
     transition:.2s ease;
-    border:8px groove #6fb28f;
+    border:8px groove #5cb34a;
 }
 
-/* Hover */
 
 #startButton:hover{
 
@@ -140,7 +128,6 @@ font-style: normal;
 
 }
 
-/* Click Animation */
 
 #startButton.clicked{
 
@@ -173,9 +160,6 @@ font-style: normal;
 }
 
 
-/* =========================================
-   PAGE 2
-========================================= */
 
 .page2-container {
     justify-content: flex-start;
@@ -184,9 +168,6 @@ font-style: normal;
 }
 
 
-/* =========================================
-   PROGRESS
-========================================= */
 
 .progress-section {
     width: 92%;
@@ -225,26 +206,20 @@ font-style: normal;
 }
 
 
-/* Progress bars */
-
 .weekly-bars {
     width: 50%;
-
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
-
     padding: 8px 3px 4px;
 }
 
 .day-bar {
     height: 125px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-
     font-family: "Inter", sans-serif;
     font-size: 7px;
 }
@@ -252,27 +227,20 @@ font-style: normal;
 .bar-track {
     width: 11px;
     height: 100px;
-
     background: #73de60;
-
     border-radius: 6px;
-
     display: flex;
     align-items: flex-end;
-
     overflow: hidden;
 }
 
 .bar-fill {
     width: 100%;
     height: 0%;
-
     background: #368728;
-
     border-radius: 6px;
-
     transition: height 0.5s ease,
-                background 0.5s ease;
+     background 0.5s ease;
 }
 
 .day-bar span {
@@ -280,58 +248,40 @@ font-style: normal;
 }
 
 
-/* =========================================
-   EXERCISE TIMER
-========================================= */
 
 .exercise-section {
     position: relative;
-
     width: 92%;
     height: 175px;
-
     margin-top: 10px;
-
     background: #ADD8E6;
-
     border: 3px solid #111;
     border-radius: 18px;
-
     overflow: hidden;
 }
 
 .timer-label {
     display: flex;
     justify-content: space-between;
-
     padding: 5px 10px;
-
     font-family: "Inter", sans-serif;
-
     font-size: 11px;
     font-weight: bold;
 }
 
 .exercise-display {
     position: absolute;
-
     top: 82px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 170px;
     height: 55px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: white;
-
     font-size: 24px;
     font-weight: bold;
-
     font-family: "Inter", sans-serif;
 }
 
@@ -364,17 +314,12 @@ font-style: normal;
 }
 
 
-/* Exercise choices */
 
 .exercise-options {
     position: absolute;
-
     bottom: 10px;
-
     left: 0;
-
     width: 100%;
-
     display: flex;
     justify-content: space-evenly;
 }
@@ -382,32 +327,22 @@ font-style: normal;
 .exercise-option {
     width: 38px;
     height: 27px;
-
     border: none;
     border-radius: 6px;
-
     background: #224756;
-
     color: white;
-
     font-size: 10px;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
 .exercise-option.selected {
     transform: scale(1.15);
-
     background: #236d92;
-
     box-shadow: 0 0 0 3px #d7f1ff;
 }
 
-/* =========================================
-   MOTIVATION
-========================================= */
+
 
 .motivation-message {
     width: 35%;
@@ -425,9 +360,6 @@ font-style: normal;
     font-size: 17.5px;
 }
 
-/* =========================================
-   MOTIVATION AVOCADO IMAGE
-========================================= */
 
 .motivation-image {
     position: absolute;
@@ -438,37 +370,25 @@ font-style: normal;
     z-index: 3;
 }
 
-/* =========================================
-   NAVIGATION
-========================================= */
 
 .bottom-navigation {
     position: absolute;
-
     bottom: 0;
     left: 0;
-
     width: 100%;
     height: 60px;
-
     display: flex;
-
     background: #086488;
 }
 
 .nav-button {
     flex: 1;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-right: 1px solid #164c61;
-
     text-decoration: none;
-
     font-size: 25px;
-
     cursor: pointer;
 }
 
@@ -476,12 +396,7 @@ font-style: normal;
     background: #0c7da7;
 }
 
-/* =========================================
-   WIDGET BACKGROUND IMAGES
-========================================= */
 
-
-/* PROGRESS IMAGE */
 
 .progress-section {
     position: relative;
@@ -489,20 +404,15 @@ font-style: normal;
 
 .progress-image {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     z-index: 0;
 }
 
 
-/* Put progress content above image */
 
 .progress-information,
 .progress-section .weekly-bars {
@@ -511,7 +421,6 @@ font-style: normal;
 }
 
 
-/* EXERCISE IMAGE */
 
 .exercise-image {
     position: absolute;
@@ -525,8 +434,6 @@ font-style: normal;
 }
 
 
-/* Put exercise controls above image */
-
 .exercise-section .timer-label,
 .exercise-section .exercise-display,
 .exercise-section #startExercise,
@@ -534,12 +441,6 @@ font-style: normal;
     z-index: 1;
 }
 
-/* =========================================
-   FIX TIMER COUNTDOWNS
-========================================= */
-
-
-/* Make sure the background image stays behind everything */
 
 .exercise-image,
 .break-image,
@@ -548,71 +449,49 @@ font-style: normal;
 }
 
 
-/* =========================================
-   EXERCISE TIMER
-========================================= */
-
 .exercise-section .timer-label {
     position: relative;
     z-index: 5;
 }
 
 
-/* Countdown */
 
 .exercise-display {
     position: absolute;
-
     top: 82px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 170px;
     height: 42px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: rgb(18, 17, 17);
-
     font-size: 24px;
     font-weight: bold;
-
     font-family: "Inter", sans-serif;
-
     z-index: 5;
-
     pointer-events: none;
 }
 
 
-/* START / STOP / RESUME button */
 
 #startExercise {
     position: absolute;
-
     top: 28px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 175px;
     height: 45px;
-
     z-index: 6;
 }
 
 
-/* Exercise choices */
 
 .exercise-options {
     z-index: 6;
 }
-/* =========================================
-   BREAK TIMER
-========================================= */
+
 
 .break-section {
     position: relative;
@@ -626,10 +505,6 @@ font-style: normal;
 }
 
 
-/* =========================================
-   BREAK BACKGROUND IMAGE
-========================================= */
-
 .break-image {
     position: absolute;
     top: 0;
@@ -642,9 +517,6 @@ font-style: normal;
 }
 
 
-/* =========================================
-   BREAK TITLE
-========================================= */
 
 .break-section .timer-label {
     position: relative;
@@ -652,9 +524,6 @@ font-style: normal;
 }
 
 
-/* =========================================
-   STOP / RESUME BUTTON
-========================================= */
 
 .break-background {
     position: absolute;
@@ -696,9 +565,7 @@ font-style: normal;
     transform: scale(0.93);
 }
 
-/* =========================================
-   BREAK COUNTDOWN
-========================================= */
+
 
 #breakDisplay {
     position: absolute;
@@ -716,9 +583,6 @@ font-style: normal;
 }
 
 
-/* =========================================
-   BREAK TIME OPTIONS
-========================================= */
 
 .break-options {
     position: absolute;
@@ -760,9 +624,6 @@ font-style: normal;
 
 
 
-/* =========================================
-   PAGE 3 PHONE
-========================================= */
 
 .page3-phone {
     width: 375px;
@@ -776,9 +637,7 @@ font-style: normal;
 }
 
 
-/* =========================================
-   PAGE 3 CONTENT
-========================================= */
+
 
 .page3-content {
     width: 100%;
@@ -788,9 +647,7 @@ font-style: normal;
 }
 
 
-/* =========================================
-   TOP IMAGE
-========================================= */
+
 
 .page3-top-image {
     width: 100%;
@@ -824,9 +681,6 @@ font-style: normal;
 }
 
 
-/* =========================================
-   TIPS CAROUSEL
-========================================= */
 
 .page3-carousel {
     width: 100%;
@@ -834,38 +688,26 @@ font-style: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 12px;
 }
 
 
-/* =========================================
-   ARROWS
-========================================= */
 
 .page3-arrow {
     width: 35px;
     height: 35px;
-
     padding: 0;
-
     border-radius: 50%;
     border: 2px solid #5d94ae;
-
     background: white;
     color: #28618a;
-
     font-size: 20px;
     font-weight: bold;
-
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
     z-index: 10;
 }
 
@@ -874,97 +716,66 @@ font-style: normal;
 }
 
 
-/* =========================================
-   CARD VIEWING WINDOW
-========================================= */
+
 
 .page3-cards-window {
     width: 222px;
     height: 68px;
-
     overflow: hidden;
-
     flex-shrink: 0;
 }
 
 
-/* =========================================
-   7-CARD TRACK
-========================================= */
+
 
 .page3-cards-track {
     display: flex;
-
     gap: 9px;
-
     height: 68px;
-
     transition: transform 0.5s ease;
-
     width: max-content;
 }
 
 
-/* =========================================
-   INDIVIDUAL CARD
-========================================= */
+
 
 .page3-card {
     width: 68px;
     height: 68px;
-
     flex: 0 0 68px;
-
     perspective: 1000px;
-
     cursor: pointer;
 }
 
 
-/* =========================================
-   CARD INNER
-========================================= */
 
 .page3-card-inner {
     width: 100%;
     height: 100%;
-
     position: relative;
-
     transition: transform 0.6s;
-
     transform-style: preserve-3d;
 }
 
 
-/* =========================================
-   FLIP
-========================================= */
+
 
 .page3-card.flipped .page3-card-inner {
     transform: rotateY(180deg);
 }
 
 
-/* =========================================
-   FRONT + BACK
-========================================= */
+
 
 .page3-card-front,
 .page3-card-back {
-
     width: 100%;
     height: 100%;
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     border-radius: 10px;
-
     overflow: hidden;
-
     backface-visibility: hidden;
 }
 
@@ -1363,4 +1174,147 @@ font-style: normal;
 
 .nav-button.active {
     background: #c9efff;
+}
+
+
+
+
+
+
+.phone {
+    width: 375px;
+    height: 758px;
+    margin: 0 auto;
+    background: #c9efff;
+    border: 7px solid #000;
+    border-radius: 58px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.credits-page {
+    width: 100%;
+    height: calc(100% - 54px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 18px 18px 30px 18px;
+}
+
+
+.credits-page::-webkit-scrollbar {
+    width: 6px;
+}
+
+.credits-page::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.credits-page::-webkit-scrollbar-thumb {
+    background: #147dad;
+    border-radius: 10px;
+}
+
+
+.credits-heading {
+    width: 90%;
+    margin: 0 auto 44px auto;
+    padding: 13px 10px;
+    background: #147dad;
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+
+.credits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 14px;
+    row-gap: 28px;
+    width: 100%;
+}
+
+
+.credit-item {
+    text-align: center;
+    min-width: 0;
+}
+
+
+.credit-item img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    display: block;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+
+.credit-item a {
+    display: inline-block;
+    color: #000;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.credit-item a:hover {
+    color: #147dad;
+}
+
+
+
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    display: flex;
+    background: #14678d;
+    border-top: 2px solid #064d70;
+    z-index: 10;
+}
+
+
+.nav-button {
+    flex: 1;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #064d70;
+    text-decoration: none;
+}
+
+
+.nav-button:last-child {
+    border-right: none;
+}
+
+
+.nav-button img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+
+.nav-button.active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.12);
 }

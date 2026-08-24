@@ -1,7 +1,3 @@
-/* =========================================
-   PAGE 1 - GET STARTED
-========================================= */
-
 const startButton = document.getElementById("startButton");
 
 if (startButton) {
@@ -29,9 +25,17 @@ if (startButton) {
 
 }
 
-/* =========================================
-   PAGE 2 - EXERCISE TIMER
-========================================= */
+
+
+
+
+
+
+
+
+
+
+
 
 const exerciseDisplay =
     document.getElementById("exerciseDisplay");
@@ -52,32 +56,25 @@ let exerciseRunning = false;
 let exercisePaused = false;
 
 
-/* =========================================
-   SELECT EXERCISE TIME
-========================================= */
 
 exerciseOptions.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
-        /* Do not change time while exercise is running */
         if (exerciseRunning) {
             return;
         }
 
-        /* Remove previous selection */
         exerciseOptions.forEach(function (otherButton) {
             otherButton.classList.remove("selected");
         });
 
-        /* Select this button */
+    
         this.classList.add("selected");
 
         const selectedTime =
             this.dataset.minutes;
 
-
-        /* OTHER OPTION */
 
         if (selectedTime === "other") {
 
@@ -105,7 +102,6 @@ exerciseOptions.forEach(function (button) {
         }
 
 
-        /* NORMAL OPTIONS */
 
         exerciseTotalSeconds =
             Number(selectedTime) * 60;
@@ -115,7 +111,6 @@ exerciseOptions.forEach(function (button) {
 
         updateExerciseDisplay();
 
-        /* Reset button to START */
         exercisePaused = false;
 
         startExercise.textContent = "START";
@@ -125,18 +120,12 @@ exerciseOptions.forEach(function (button) {
 });
 
 
-/* =========================================
-   START / STOP / RESUME EXERCISE
-========================================= */
 
 if (startExercise) {
 
     startExercise.addEventListener("click", function () {
 
 
-        /* ---------------------------------
-           START EXERCISE
-        --------------------------------- */
 
         if (!exerciseRunning && !exercisePaused) {
 
@@ -160,9 +149,7 @@ if (startExercise) {
         }
 
 
-        /* ---------------------------------
-           STOP / PAUSE EXERCISE
-        --------------------------------- */
+       
 
         if (exerciseRunning) {
 
@@ -177,9 +164,7 @@ if (startExercise) {
         }
 
 
-        /* ---------------------------------
-           RESUME EXERCISE
-        --------------------------------- */
+      
 
         if (exercisePaused) {
 
@@ -197,9 +182,6 @@ if (startExercise) {
 }
 
 
-/* =========================================
-   EXERCISE COUNTDOWN
-========================================= */
 
 function startExerciseTimer() {
 
@@ -216,7 +198,6 @@ function startExerciseTimer() {
         }
 
 
-        /* Exercise finished */
 
         if (exerciseRemainingSeconds <= 0) {
 
@@ -237,13 +218,10 @@ function startExerciseTimer() {
 
 }
 
-/* =========================================
-   RECORD COMPLETED WORKOUT
-========================================= */
 
 function recordCompletedWorkout() {
 
-    /* Work out how many minutes were completed */
+    
     const completedMinutes =
         Math.floor(exerciseTotalSeconds / 60);
 
@@ -251,7 +229,7 @@ function recordCompletedWorkout() {
         return;
     }
 
-    /* Find today's day */
+    
     const today = new Date();
 
     const days = [
@@ -266,7 +244,7 @@ function recordCompletedWorkout() {
 
     const todayName = days[today.getDay()];
 
-    /* Get saved progress */
+    
     let exerciseData =
         JSON.parse(localStorage.getItem("exerciseData")) || {
             monday: 0,
@@ -278,23 +256,20 @@ function recordCompletedWorkout() {
             sunday: 0
         };
 
-    /* Add completed exercise time */
+    
     exerciseData[todayName] += completedMinutes;
 
-    /* Save the progress */
+    
     localStorage.setItem(
         "exerciseData",
         JSON.stringify(exerciseData)
     );
 
-    /* Update the progress bars */
+    
     updateProgressBars(exerciseData);
 }
 
 
-/* =========================================
-   UPDATE PROGRESS BARS
-========================================= */
 
 function updateProgressBars(exerciseData) {
 
@@ -341,9 +316,7 @@ updateProgressBars(
     }
 );
 
-/* =========================================
-   UPDATE EXERCISE AVERAGES
-========================================= */
+
 
 function updateExerciseAverages(exerciseData) {
 
@@ -357,31 +330,31 @@ function updateExerciseAverages(exerciseData) {
         "sunday"
     ];
 
-    /* Find today's day */
+    
     const today = new Date();
     const todayName = days[
         today.getDay() === 0 ? 6 : today.getDay() - 1
     ];
 
-    /* Exercise completed today */
+    
     const dailyTotal = exerciseData[todayName];
 
-    /* Calculate total exercise this week */
+    
     let weeklyTotal = 0;
 
     days.forEach(function(day) {
         weeklyTotal += exerciseData[day];
     });
 
-    /* Weekly average per day */
+    
     const weeklyAverage =
         weeklyTotal / 7;
 
-    /* Monthly average per day */
+    
     const monthlyAverage =
         (weeklyTotal * 4) / 30;
 
-    /* Find the HTML elements */
+    
     const dailyElement =
         document.getElementById("dailyAverage");
 
@@ -391,7 +364,7 @@ function updateExerciseAverages(exerciseData) {
     const monthlyElement =
         document.getElementById("monthlyAverage");
 
-    /* Update the text */
+    
     if (dailyElement) {
         dailyElement.textContent =
             "Daily average: " +
@@ -415,9 +388,7 @@ function updateExerciseAverages(exerciseData) {
 }
    
 
-/* =========================================
-LOAD EXERCISE DATA
-========================================= */
+
 
 const exerciseData =
     JSON.parse(localStorage.getItem("exerciseData")) || {
@@ -433,9 +404,6 @@ const exerciseData =
 updateExerciseAverages(exerciseData);
 
     
-/* =========================================
-   UPDATE EXERCISE DISPLAY
-========================================= */
 
 function updateExerciseDisplay() {
 
@@ -459,9 +427,6 @@ function updateExerciseDisplay() {
 
 
 
-/* =========================================
-   BREAK TIMER
-========================================= */
 
 const breakOptions =
     document.querySelectorAll(".break-option");
@@ -483,15 +448,12 @@ let breakRunning = false;
 let breakPaused = false;
 
 
-/* =========================================
-   SELECT BREAK TIME
-========================================= */
 
 breakOptions.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
-        /* Don't change break while running */
+
         if (breakRunning) {
             return;
         }
@@ -530,9 +492,7 @@ breakOptions.forEach(function (button) {
 });
 
 
-/* =========================================
-   BREAK STOP BUTTON
-========================================= */
+
 
 if (stopBreak) {
 
@@ -555,9 +515,7 @@ if (stopBreak) {
 }
 
 
-/* =========================================
-   BREAK RESUME BUTTON
-========================================= */
+
 
 if (resumeBreak) {
 
@@ -580,9 +538,6 @@ if (resumeBreak) {
 }
 
 
-/* =========================================
-   START BREAK COUNTDOWN
-========================================= */
 
 function startBreakTimer() {
 
@@ -600,7 +555,6 @@ function startBreakTimer() {
         }
 
 
-        /* Break finished */
 
         if (breakRemainingSeconds <= 0) {
 
@@ -626,9 +580,6 @@ function startBreakTimer() {
 }
 
 
-/* =========================================
-   UPDATE BREAK DISPLAY
-========================================= */
 
 function updateBreakDisplay() {
 
@@ -652,9 +603,6 @@ function updateBreakDisplay() {
 }
 
 
-/* =========================================
-   UPDATE BREAK BUTTONS
-========================================= */
 
 function updateBreakButtons() {
 
@@ -793,8 +741,6 @@ function updateBreakButtons() {
             "click",
             function () {
 
-
-                /* Get activity */
 
                 const activity =
                     activityInput.value.trim();
@@ -1017,3 +963,26 @@ function deleteActivity(index) {
 
 
 loadActivities();
+
+
+
+
+
+
+
+
+
+
+
+
+(function () {
+
+    const creditsPage = document.querySelector(".credits-page");
+
+    if (!creditsPage) {
+        return;
+    }
+
+    console.log("Image Credits page loaded successfully.");
+
+})();
